@@ -1,0 +1,22 @@
+#root {
+    width: fit-content;
+}
+
+.suggestion {
+    background-color: rgb(235, 235, 235);
+}
+
+.suggestion:hover {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+p {
+    margin: 0px
+}
+
+#card {
+    border: solid black;
+    /* background-color: red; */
+}
