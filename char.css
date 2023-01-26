@@ -2,11 +2,48 @@ body
 {
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
-  background: #f1ddd7;;
+  background: #f1ddd7;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
 }
+
+.center{
+    text-align: center;
+    line-height: 3;
+}
+
+
+/* footer p{
+    line-height: 3.7;
+} */
 
 p {
     margin: 0px
+}
+
+footer {
+    background-color: #4b5b73;
+    color: white;
+    bottom: 0;
+    width: 100vw;
+    height: 7vh;
+    font-size: 16px;
+
+  }
+
+  /* footer * {
+    box-sizing: border-box;
+    border: 2%;
+    outline: none;
+  } */
+
+.suggestion-message {
+    font-size: 30px;
+    position:absolute;
+    bottom: 20vh;
 }
 
 .text-enter {
@@ -24,6 +61,14 @@ p {
     left: 50vw;
     transform: translate(-50%, -50%);
     width: 100px;
+}
+
+.condition-icon {
+    /* padding: 20%;
+    position: absolute;
+    top: -2vh;
+    left: 40vw; */
+    width: 60%;
 }
 
 .suggestion {
@@ -48,7 +93,7 @@ p {
   }
 
 .date {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     color: rgba(0,0,0,0.5);
 }
@@ -77,8 +122,8 @@ p {
 
 #card {
     position: absolute;
-    left: 10vw;
-    top: 10vw;
+    left: 5vw;
+    top: 2vw;
     /* border: solid rgb(227, 215, 215); */
     /* background-color: red; */
 }

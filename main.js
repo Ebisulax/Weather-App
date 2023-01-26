@@ -2,11 +2,11 @@ console.clear();
 
 const inputField = document.createElement("input");
 const root = document.querySelector('#root');
-let autoCorrectField
+let autoCorrectField;
 
 inputField.setAttribute("id", "input");
 inputField.setAttribute("type", "text");
-inputField.classList.add("search")
+inputField.classList.add("search");
 
 root.appendChild(inputField);
 
@@ -33,6 +33,7 @@ function checkForCities(str){
         })
 }
 
+//Show suggestive list of cities when entering 3 letters
 function addAutoCorrect(city){
     autoCorrectField = document.createElement("p");
     autoCorrectField.innerText += city.name + ", " + city.country;
@@ -59,9 +60,25 @@ function getCurrentDate (){
     let year = date.getFullYear();
 
     let today = `${day}.${month}.${year}`;
-    console.log("hi");
     return today;
+}
 
+function getSuggestionOfTheDay(temperature) {
+    if(temperature <= 0) {
+        return "Make a snow angel (or devil) scenery OR watch and review famous Christmas movies";
+    } else if (temperature > 0 && temperature <= 5 ) {
+        return "Go Ice Skating with friends OR try Yoga to warm up";  
+    } else if (temperature > 5 && temperature <= 10) {
+        return "Take a route to work/school you never did OR code an app that excites you";
+    } else if (temperature > 10 && temperature <= 16) {
+        return "Go to your fave cafè and watch the city around you OR clean out and rearrange your closet"; 
+    } else if (temperature > 16 && temperature <= 22) { 
+        return "Take a route to work/school you never did OR indoor workout dance class";
+    } else if (temperature > 22 && temperature <= 26) {
+        return "Stroll through the park and get your fave snack OR come up with your own Iced Coffee/Iced Tea recipe";
+    } else if (temperature > 30) {
+        return "Take a swim OR make yourself a cooling summer cocktail";
+    }
 }
 
 function displayWeatherCard(city){
@@ -72,13 +89,6 @@ function displayWeatherCard(city){
             let card = document.createElement("div");
             card.setAttribute("id", "card");
             root.appendChild(card);
-        
-            // let weatherData = document.createElement("p");
-            // card.appendChild(weatherData);
-            // weatherData.innerText=
-            // `Temperature: ${data.current.feelslike_c}°C\n
-            // ${data.current.condition.text}\n
-            // Windspeed: ${data.current.gust_kph} kph`;
 
             let elementToday = document.createElement("p");
             elementToday.innerText = `Today, ${getCurrentDate()} in ${city.name} it is`;
@@ -98,8 +108,16 @@ function displayWeatherCard(city){
             elementWindspeed.innerText = `Windspeed: ${data.current.gust_kph} kph`;
             card.appendChild(elementWindspeed);
 
+            let elementIcon = document.createElement("img");
+            elementIcon.src = `${data.current.condition.icon.slice(21)}`;
+            elementIcon.classList.add("condition-icon")
+            card.appendChild(elementIcon);
+
+            let suggestion = document.querySelector("footer");
+            suggestion.innerHTML = getSuggestionOfTheDay(data.current.feelslike_c);
         });
 }
+
 
 function clearInputField(){
     inputField.value = "";
