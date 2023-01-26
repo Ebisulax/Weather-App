@@ -76,8 +76,9 @@ p {
   }
 
 #card {
-    left: 20vw;
-    top: 20vw;
+    position: absolute;
+    left: 10vw;
+    top: 10vw;
     /* border: solid rgb(227, 215, 215); */
     /* background-color: red; */
 }
