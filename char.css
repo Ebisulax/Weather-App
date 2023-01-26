@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body
 {
   font-family: 'Roboto', sans-serif;
@@ -15,11 +20,6 @@ body
     line-height: 3;
 }
 
-
-/* footer p{
-    line-height: 3.7;
-} */
-
 p {
     margin: 0px
 }
@@ -29,10 +29,21 @@ footer {
     color: white;
     bottom: 0;
     width: 100vw;
-    height: 7vh;
+    height: 6vh;
     font-size: 16px;
-
+    box-shadow: 20px 20px 20px rgb(152, 148, 148); 
   }
+
+header {
+    background-color: #4b5b73;  
+    color: white;
+    position: fixed;  
+    left: 0;  
+    right: 0;  
+    top: 0px;  
+    height: 6vh;  
+    box-shadow: 0 0 20px 0 rgb(91, 88, 88); 
+}
 
   /* footer * {
     box-sizing: border-box;
@@ -61,6 +72,14 @@ footer {
     left: 50vw;
     transform: translate(-50%, -50%);
     width: 100px;
+}
+
+.mode {
+    position: absolute;
+    top: 38vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 250px;
 }
 
 .condition-icon {
@@ -123,7 +142,7 @@ footer {
 #card {
     position: absolute;
     left: 5vw;
-    top: 2vw;
+    top: 8vw;
     /* border: solid rgb(227, 215, 215); */
     /* background-color: red; */
 }
